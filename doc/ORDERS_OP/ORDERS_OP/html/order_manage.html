@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>订单管理</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<style type="text/css">
+	html{width: 100%;height: 100%;}
+	body{min-width: 1366px;height: 100%;background-color: #F4F3F4;}
+	.clear{clear: both;}
+
+	/*垂直居中（兼容IE、webkit、mozila）*/
+    .center-vertical{display: -webkit-box;-webkit-box-align: center;display: -ms-flexbox;-ms-flex-align: center;display: -moz-box;-moz-box-align: center;}
+    /*水平居中（兼容IE、webkit、mozila）*/
+    .center-horizontal{display: -webkit-box;-webkit-box-pack: center;display:-ms-flexbox;-ms-flex-pack:center;display: -moz-box;-moz-box-pack: center;}
+    /*居中（兼容IE、webkit、mozila）*/
+    .center{display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center;display:-ms-flexbox;-ms-flex-pack:center;-ms-flex-align:center;display:-moz-box;-moz-box-pack:center;-moz-box-align:center;}
+
+    .h10{width: 100%;height: 10px;}
+    .h20{width: 100%;height: 20px;}
+    .h40{width: 100%;height: 40px;}
+
+    .user{width: 1366px;margin: 0 auto;padding: 10px;background-color: white;}
+
+    .order-manage-wrapper{width: 1366px;margin: 0 auto;padding: 10px;background-color: white;}
+    .order-manage-head{border: 1px solid #e5e5e5;padding: 10px;background-color: #F4F3F4;}
+    .order-manage-head > label{font-size: 18px;color: #C50001;font-weight: bold;}
+    .order-manage-search{width: 100%;padding: 10px;}
+    .search{float: right;}
+
+    .order-manage-list{width: 100%;}
+    .order-manage-list table{width: 100%;border:1px solid #e5e5e5;}
+    table thead{background-color: #FFFFE2;}
+    table thead th{text-align: center;padding: 10px 0px;}
+    table thead th label{position: relative;top: 3px;}
+    table tbody td{text-align: center;padding: 10px 0px;}
+    table tbody tr td:last-child label:first-child{color: #32B045;}
+    table tbody tr td:last-child label:last-child{color: #C50001;}
+	</style>
+</head>
+<body>
+	<div class="h20"></div>
+	<div class="user">
+		<div style="width: 100%;padding: 10px;background-color: #F4F3F4;">
+			<div style="float: right;">
+				<label style="font-size: 16px;margin-right: 10px;">木子三石</label>
+				<a href="" style="font-size: 14px;">退出登录</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="h20"></div>
+	<!-- 订单管理 -->
+	<div class="order-manage-wrapper">
+		<!-- 标题 -->
+		<div class="order-manage-head">
+			<label>订单信息管理</label>
+		</div>
+		<!-- 搜索 -->
+		<div class="order-manage-search">
+			<div class="search">
+				<form>
+					<input type="text" name="orderkey" id="orderkey" placeholder="请输入关键字搜索"></input>
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="h10"></div>
+		<!-- 订单表格 -->
+		<div class="order-manage-list">
+			<table border="1">
+				<thead>
+					<th style="width: 3%;">
+						<input type="checkbox" id="checkall"></input>
+					</th>
+					<!-- ID -->
+					<th style="width: 6%;">
+						<label>ID</label>
+					</th>
+					<!-- 单号 -->
+					<th style="width: 12%;">
+						<label>单号</label>
+					</th>
+					<!-- 订购时间 -->
+					<th style="width: 12%;">
+						<label>订购时间</label>
+					</th>
+					<!-- 订购产品 -->
+					<th style="width: 10%;">
+						<label>订购产品</label>
+					</th>
+					<!-- 姓名 -->
+					<th style="width: 6%;">
+						<label>姓名</label>
+					</th>
+					<!-- 手机 -->
+					<th style="width: 8%;">
+						<label>手机</label>
+					</th>
+
+					<!-- 收货地址 -->
+					<th style="width: 8%;">
+						<label>收货地址</label>
+					</th>
+					<!-- 提交IP -->
+					<th style="width: 8%;">
+						<label>提交IP</label>
+					</th>
+					<!-- 关键词 -->
+					<th style="width: 5%;">
+						<label>关键词</label>
+					</th>
+					<!-- 渠道 -->
+					<th style="width: 5%;">
+						<label>渠道</label>
+					</th>
+					<!-- 状态 -->
+					<th style="width: 4%;">
+						<label>状态</label>
+					</th>
+					<!-- 处理 -->
+					<th style="width: 7%;">
+						<label>处理</label>
+					</th>
+					<!-- 操作 -->
+					<th style="width: 6%;">
+						<label>操作</label>
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="checkbox" id="checkitem"></input>
+						</td>
+						<!-- ID -->
+						<td>
+							<label>9</label>
+						</td>
+						<!-- 单号 -->
+						<td>
+							<label>0420210930200281</label>
+						</td>
+						<!-- 订购时间 -->
+						<td>
+							<label>2016-04-13 07:09:30</label>
+						</td>
+						<!-- 订购产品 -->
+						<td>
+							<label>原装加强版/99档160倍快速瘦/安全急速瘦身</label>
+						</td>
+						<!-- 姓名 -->
+						<td>
+							<label>赵玉红</label>
+						</td>
+						<!-- 手机 -->
+						<td>
+							<label>18255669028</label>
+						</td>
+
+						<!-- 收货地址 -->
+						<td>
+							<label>湖北省	 荆州市 石首市 思铂睿路成功小区3单元</label>
+						</td>
+						<!-- 提交IP -->
+						<td>
+							<label>221.233.20.22</label>
+						</td>
+						<!-- 关键词 -->
+						<td>
+							<label>无</label>
+						</td>
+						<!-- 渠道 -->
+						<td>
+							<label>sinanew</label>
+						</td>
+						<!-- 状态 -->
+						<td>
+							<label>未处理</label>
+						</td>
+						<!-- 处理 -->
+						<td>
+							<select>
+								<option>--请选择--</option>
+							</select>
+						</td>
+						<!-- 操作 -->
+						<td>
+							<label>【修改】</label>
+							<div></div>
+							<label>【x删除】</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" id="checkitem"></input>
+						</td>
+						<!-- ID -->
+						<td>
+							<label>9</label>
+						</td>
+						<!-- 单号 -->
+						<td>
+							<label>0420210930200281</label>
+						</td>
+						<!-- 订购时间 -->
+						<td>
+							<label>2016-04-13 07:09:30</label>
+						</td>
+						<!-- 订购产品 -->
+						<td>
+							<label>原装加强版/99档160倍快速瘦/安全急速瘦身</label>
+						</td>
+						<!-- 姓名 -->
+						<td>
+							<label>赵玉红</label>
+						</td>
+						<!-- 手机 -->
+						<td>
+							<label>18255669028</label>
+						</td>
+
+						<!-- 收货地址 -->
+						<td>
+							<label>湖北省	 荆州市 石首市 思铂睿路成功小区3单元</label>
+						</td>
+						<!-- 提交IP -->
+						<td>
+							<label>221.233.20.22</label>
+						</td>
+						<!-- 关键词 -->
+						<td>
+							<label>无</label>
+						</td>
+						<!-- 渠道 -->
+						<td>
+							<label>sinanew</label>
+						</td>
+						<!-- 状态 -->
+						<td>
+							<label>未处理</label>
+						</td>
+						<!-- 处理 -->
+						<td>
+							<select>
+								<option>--请选择--</option>
+							</select>
+						</td>
+						<!-- 操作 -->
+						<td>
+							<label>【修改】</label>
+							<div></div>
+							<label>【x删除】</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" id="checkitem"></input>
+						</td>
+						<!-- ID -->
+						<td>
+							<label>9</label>
+						</td>
+						<!-- 单号 -->
+						<td>
+							<label>0420210930200281</label>
+						</td>
+						<!-- 订购时间 -->
+						<td>
+							<label>2016-04-13 07:09:30</label>
+						</td>
+						<!-- 订购产品 -->
+						<td>
+							<label>原装加强版/99档160倍快速瘦/安全急速瘦身</label>
+						</td>
+						<!-- 姓名 -->
+						<td>
+							<label>赵玉红</label>
+						</td>
+						<!-- 手机 -->
+						<td>
+							<label>18255669028</label>
+						</td>
+
+						<!-- 收货地址 -->
+						<td>
+							<label>湖北省	 荆州市 石首市 思铂睿路成功小区3单元</label>
+						</td>
+						<!-- 提交IP -->
+						<td>
+							<label>221.233.20.22</label>
+						</td>
+						<!-- 关键词 -->
+						<td>
+							<label>无</label>
+						</td>
+						<!-- 渠道 -->
+						<td>
+							<label>sinanew</label>
+						</td>
+						<!-- 状态 -->
+						<td>
+							<label>未处理</label>
+						</td>
+						<!-- 处理 -->
+						<td>
+							<select>
+								<option>--请选择--</option>
+							</select>
+						</td>
+						<!-- 操作 -->
+						<td>
+							<label>【修改】</label>
+							<div></div>
+							<label>【x删除】</label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</html>
